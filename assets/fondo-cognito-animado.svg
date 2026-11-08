@@ -1,0 +1,380 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradiente de fondo cálido amanecer apícola -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF7"/>
+      <stop offset="40%" stop-color="#FEF9E7"/>
+      <stop offset="75%" stop-color="#FDE8B5"/>
+      <stop offset="100%" stop-color="#FCD34D"/>
+    </linearGradient>
+
+    <!-- Resplandor solar de miel -->
+    <radialGradient id="sun-glow" cx="15%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.38"/>
+      <stop offset="50%" stop-color="#FDE68A" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FFFBEB" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Resplandor esquina inferior derecha -->
+    <radialGradient id="honey-glow-corner" cx="85%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#FBBF24" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FEF3C7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Resplandor central para la tarjeta de Cognito sin filtros -->
+    <radialGradient id="card-center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gradiente de celdas de panal -->
+    <linearGradient id="hex-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <linearGradient id="hex-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0.06"/>
+    </linearGradient>
+
+    <!-- Gradiente cuerpo de abeja -->
+    <linearGradient id="bee-stripes" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="25%" stop-color="#F59E0B"/>
+      <stop offset="45%" stop-color="#1E293B"/>
+      <stop offset="70%" stop-color="#FBBF24"/>
+      <stop offset="88%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <!-- Gradiente de alas translúcidas -->
+    <linearGradient id="wing-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0.25"/>
+    </linearGradient>
+
+    <!-- Símbolo: Abeja Iluminada con Alas Aleteando (Sin elementos <filter> para compatibilidad total con AWS Cognito) -->
+    <g id="realistic-bee">
+      <!-- Sombra vectorial suave bajo el cuerpo -->
+      <ellipse cx="2" cy="18" rx="15" ry="4" fill="#78350F" opacity="0.18"/>
+
+      <!-- Antenas -->
+      <path d="M 32 4 C 36 -2, 42 -2, 44 2" stroke="#1E293B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M 34 8 C 39 4, 45 6, 46 10" stroke="#1E293B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <circle cx="44" cy="2" r="1.5" fill="#D97706"/>
+      <circle cx="46" cy="10" r="1.5" fill="#D97706"/>
+
+      <!-- Aguijón -->
+      <path d="M -16 11 L -22 12.5 L -16 14 Z" fill="#0F172A"/>
+
+      <!-- Patas traseras y medias -->
+      <path d="M 2 17 Q 0 25 -4 28" stroke="#1E293B" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M 12 17 Q 14 26 10 30" stroke="#1E293B" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M 22 16 Q 26 23 28 27" stroke="#1E293B" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Abdomen con rayas de tigre apícola -->
+      <ellipse cx="2" cy="12.5" rx="17" ry="11" fill="url(#bee-stripes)"/>
+      <!-- Reflejo curvo del abdomen -->
+      <path d="M -8 6 Q 2 2 12 6" stroke="#FEF08A" stroke-width="1.8" fill="none" opacity="0.6"/>
+
+      <!-- Tórax peludo ámbar oscuro -->
+      <circle cx="21" cy="12" r="9" fill="#334155"/>
+      <circle cx="21" cy="12" r="8" fill="#78350F" opacity="0.85"/>
+      <ellipse cx="20" cy="10" rx="5" ry="3" fill="#D97706" opacity="0.75"/>
+
+      <!-- Cabeza con ojos compuestos -->
+      <circle cx="31" cy="12" r="6.5" fill="#1E293B"/>
+      <ellipse cx="32" cy="9.5" rx="2.5" ry="3.5" fill="#020617"/>
+      <circle cx="33" cy="8.5" r="0.8" fill="#F8FAFC"/>
+
+      <!-- Ala Delantera (Animada por clase) -->
+      <g class="wing-front">
+        <ellipse cx="14" cy="-5" rx="17" ry="8" fill="url(#wing-grad)" stroke="#93C5FD" stroke-width="0.8" transform="rotate(-32 14 -5)"/>
+        <!-- Venas del ala -->
+        <path d="M 4 2 Q 14 -6 26 -11" stroke="#93C5FD" stroke-width="0.7" fill="none" opacity="0.7"/>
+        <path d="M 12 -4 Q 18 -2 24 -6" stroke="#93C5FD" stroke-width="0.5" fill="none" opacity="0.6"/>
+      </g>
+
+      <!-- Ala Trasera -->
+      <g class="wing-back">
+        <ellipse cx="6" cy="-2" rx="12" ry="6" fill="url(#wing-grad)" stroke="#93C5FD" stroke-width="0.7" transform="rotate(-15 6 -2)" opacity="0.85"/>
+        <path d="M 0 3 Q 7 -2 15 -4" stroke="#93C5FD" stroke-width="0.5" fill="none" opacity="0.6"/>
+      </g>
+    </g>
+
+    <style>
+      /* ==========================================================
+         ANIMACIONES VECTORIALES NATIVAS (SVG PURO)
+         ========================================================== */
+
+      /* Aleteo ultra-rápido de alta fidelidad */
+      .wing-front {
+        transform-origin: 10px 10px;
+        animation: flapFront 0.11s infinite ease-in-out alternate;
+      }
+      .wing-back {
+        transform-origin: 5px 8px;
+        animation: flapBack 0.11s infinite ease-in-out alternate-reverse;
+      }
+
+      @keyframes flapFront {
+        0%   { transform: rotate(0deg) scaleY(1); opacity: 0.95; }
+        50%  { transform: rotate(-35deg) scaleY(0.4); opacity: 0.55; }
+        100% { transform: rotate(18deg) scaleY(0.9); opacity: 0.9; }
+      }
+      @keyframes flapBack {
+        0%   { transform: rotate(0deg) scaleY(1); opacity: 0.85; }
+        50%  { transform: rotate(-25deg) scaleY(0.35); opacity: 0.45; }
+        100% { transform: rotate(12deg) scaleY(0.85); opacity: 0.8; }
+      }
+
+      /* Trayectoria Abeja 1: Vuelo ondulante diagonal superior */
+      .bee-track-1 {
+        animation: flight1 26s infinite ease-in-out;
+      }
+      @keyframes flight1 {
+        0% {
+          transform: translate(-120px, 180px) rotate(8deg) scale(0.95);
+        }
+        25% {
+          transform: translate(480px, 90px) rotate(-6deg) scale(1);
+        }
+        50% {
+          transform: translate(1100px, 210px) rotate(10deg) scale(1.05);
+        }
+        75% {
+          transform: translate(1620px, 110px) rotate(-4deg) scale(0.98);
+        }
+        100% {
+          transform: translate(2080px, 160px) rotate(6deg) scale(0.95);
+        }
+      }
+
+      /* Trayectoria Abeja 2: Vuelo bajo danzante cerca de las flores */
+      .bee-track-2 {
+        animation: flight2 22s infinite ease-in-out;
+        animation-delay: -9s;
+      }
+      @keyframes flight2 {
+        0% {
+          transform: translate(2050px, 860px) scaleX(-1) rotate(6deg) scale(0.9);
+        }
+        28% {
+          transform: translate(1450px, 760px) scaleX(-1) rotate(-10deg) scale(0.95);
+        }
+        55% {
+          transform: translate(880px, 890px) scaleX(-1) rotate(12deg) scale(0.88);
+        }
+        80% {
+          transform: translate(380px, 800px) scaleX(-1) rotate(-6deg) scale(0.92);
+        }
+        100% {
+          transform: translate(-150px, 870px) scaleX(-1) rotate(4deg) scale(0.9);
+        }
+      }
+
+      /* Trayectoria Abeja 3: Exploradora en órbita suave lateral */
+      .bee-track-3 {
+        animation: flight3 30s infinite ease-in-out;
+        animation-delay: -17s;
+      }
+      @keyframes flight3 {
+        0% {
+          transform: translate(-100px, 620px) rotate(-12deg) scale(0.8);
+        }
+        30% {
+          transform: translate(620px, 480px) rotate(8deg) scale(0.85);
+        }
+        60% {
+          transform: translate(1350px, 590px) rotate(-10deg) scale(0.82);
+        }
+        100% {
+          transform: translate(2060px, 450px) rotate(5deg) scale(0.8);
+        }
+      }
+
+      /* Trayectoria Abeja 4: Pequeña nodriza en cuadrante superior derecho */
+      .bee-track-4 {
+        animation: flight4 18s infinite ease-in-out;
+        animation-delay: -5s;
+      }
+      @keyframes flight4 {
+        0%   { transform: translate(1750px, 280px) rotate(-8deg) scale(0.68); }
+        50%  { transform: translate(1620px, 200px) rotate(14deg) scale(0.72); }
+        100% { transform: translate(1750px, 280px) rotate(-8deg) scale(0.68); }
+      }
+
+      /* Polen y Néctar Flotante */
+      .pollen-particle {
+        animation: floatPollen 8s infinite ease-in-out alternate;
+      }
+      .pollen-delayed-1 { animation-duration: 9.5s; animation-delay: -2s; }
+      .pollen-delayed-2 { animation-duration: 11s; animation-delay: -5s; }
+      .pollen-delayed-3 { animation-duration: 7.2s; animation-delay: -3.5s; }
+
+      @keyframes floatPollen {
+        0% {
+          transform: translateY(0px) translateX(0px);
+          opacity: 0.35;
+        }
+        50% {
+          transform: translateY(-45px) translateX(25px);
+          opacity: 0.85;
+        }
+        100% {
+          transform: translateY(-90px) translateX(-15px);
+          opacity: 0.25;
+        }
+      }
+
+      /* Pulso respiratorio de los hexágonos de miel */
+      .pulse-hex-1 {
+        animation: pulseHex 6s infinite ease-in-out alternate;
+      }
+      .pulse-hex-2 {
+        animation: pulseHex 7.5s infinite ease-in-out alternate;
+        animation-delay: -3s;
+      }
+      @keyframes pulseHex {
+        0%   { opacity: 0.25; transform: scale(1); }
+        100% { opacity: 0.65; transform: scale(1.02); }
+      }
+
+      /* Vaivén de flora apícola inferior (lavandas y espigas) */
+      .sway-flora {
+        transform-origin: bottom center;
+        animation: floraSway 6s infinite ease-in-out alternate;
+      }
+      .sway-flora-2 {
+        transform-origin: bottom center;
+        animation: floraSway 8s infinite ease-in-out alternate-reverse;
+      }
+      @keyframes floraSway {
+        0%   { transform: rotate(-2.5deg); }
+        100% { transform: rotate(2.5deg); }
+      }
+    </style>
+  </defs>
+
+  <!-- ==========================================================
+       1. CAPA DE FONDO SOLAR Y RESPLANDOR
+       ========================================================== -->
+  <rect width="1920" height="1080" fill="url(#bg-grad)"/>
+  <rect width="1920" height="1080" fill="url(#sun-glow)"/>
+  <rect width="1920" height="1080" fill="url(#honey-glow-corner)"/>
+
+  <!-- ==========================================================
+       2. ESTRUCTURA GEOMÉTRICA DE PANAL (HEXÁGONOS EN ESQUINAS)
+       ========================================================== -->
+  <!-- Panal Esquina Superior Izquierda -->
+  <g class="pulse-hex-1" stroke="url(#hex-stroke)" stroke-width="2.5" fill="url(#hex-fill)">
+    <polygon points="120,40 180,75 180,145 120,180 60,145 60,75"/>
+    <polygon points="240,40 300,75 300,145 240,180 180,145 180,75"/>
+    <polygon points="180,145 240,180 240,250 180,285 120,250 120,180"/>
+    <polygon points="60,145 120,180 120,250 60,285 0,250 0,180"/>
+    <polygon points="300,145 360,180 360,250 300,285 240,250 240,180"/>
+    <polygon points="240,250 300,285 300,355 240,390 180,355 180,285"/>
+  </g>
+
+  <!-- Panal Esquina Superior Derecha -->
+  <g class="pulse-hex-2" stroke="url(#hex-stroke)" stroke-width="2.5" fill="url(#hex-fill)">
+    <polygon points="1800,50 1860,85 1860,155 1800,190 1740,155 1740,85"/>
+    <polygon points="1680,50 1740,85 1740,155 1680,190 1620,155 1620,85"/>
+    <polygon points="1740,155 1800,190 1800,260 1740,295 1680,260 1680,190"/>
+    <polygon points="1860,155 1920,190 1920,260 1860,295 1800,260 1800,190"/>
+    <polygon points="1620,155 1680,190 1680,260 1620,295 1560,260 1560,190"/>
+    <polygon points="1680,260 1740,295 1740,365 1680,400 1620,365 1620,295"/>
+  </g>
+
+  <!-- Panal Esquina Inferior Izquierda -->
+  <g class="pulse-hex-2" stroke="url(#hex-stroke)" stroke-width="2" fill="url(#hex-fill)">
+    <polygon points="140,880 190,910 190,970 140,1000 90,970 90,910"/>
+    <polygon points="240,880 290,910 290,970 240,1000 190,970 190,910"/>
+    <polygon points="190,970 240,1000 240,1060 190,1090 140,1060 140,1000"/>
+    <polygon points="90,970 140,1000 140,1060 90,1090 40,1060 40,1000"/>
+  </g>
+
+  <!-- Panal Esquina Inferior Derecha -->
+  <g class="pulse-hex-1" stroke="url(#hex-stroke)" stroke-width="2" fill="url(#hex-fill)">
+    <polygon points="1780,860 1830,890 1830,950 1780,980 1730,950 1730,890"/>
+    <polygon points="1880,860 1930,890 1930,950 1880,980 1830,950 1830,890"/>
+    <polygon points="1830,950 1880,980 1880,1040 1830,1070 1780,1040 1780,980"/>
+    <polygon points="1730,950 1780,980 1780,1040 1730,1070 1680,1040 1680,980"/>
+  </g>
+
+  <!-- ==========================================================
+       3. FLORA MELÍFERA SILVESTRE EN LA BASE (LAVANDAS Y ESPIGAS)
+       ========================================================== -->
+  <g class="sway-flora" opacity="0.45">
+    <path d="M 60 1080 Q 80 940 120 860" stroke="#78716C" stroke-width="2.5" fill="none"/>
+    <ellipse cx="120" cy="855" rx="5" ry="9" fill="#F59E0B" transform="rotate(-15 120 855)"/>
+    <ellipse cx="112" cy="875" rx="4.5" ry="8" fill="#D97706" transform="rotate(-20 112 875)"/>
+    <ellipse cx="126" cy="895" rx="4" ry="7" fill="#FBBF24" transform="rotate(10 126 895)"/>
+
+    <path d="M 160 1080 Q 190 920 220 820" stroke="#78716C" stroke-width="2.2" fill="none"/>
+    <ellipse cx="220" cy="815" rx="5" ry="10" fill="#F59E0B" transform="rotate(15 220 815)"/>
+    <ellipse cx="210" cy="838" rx="4.5" ry="8" fill="#FBBF24" transform="rotate(-10 210 838)"/>
+    <ellipse cx="228" cy="860" rx="4" ry="7" fill="#D97706" transform="rotate(20 228 860)"/>
+
+    <path d="M 310 1080 Q 330 960 380 890" stroke="#78716C" stroke-width="2" fill="none"/>
+    <ellipse cx="380" cy="885" rx="4.5" ry="8" fill="#F59E0B" transform="rotate(25 380 885)"/>
+  </g>
+
+  <g class="sway-flora-2" opacity="0.4">
+    <path d="M 1860 1080 Q 1830 930 1790 850" stroke="#78716C" stroke-width="2.5" fill="none"/>
+    <ellipse cx="1790" cy="845" rx="5" ry="9" fill="#F59E0B" transform="rotate(18 1790 845)"/>
+    <ellipse cx="1802" cy="868" rx="4.5" ry="8" fill="#D97706" transform="rotate(-15 1802 868)"/>
+    <ellipse cx="1782" cy="890" rx="4" ry="7" fill="#FBBF24" transform="rotate(12 1782 890)"/>
+
+    <path d="M 1740 1080 Q 1700 950 1670 870" stroke="#78716C" stroke-width="2.2" fill="none"/>
+    <ellipse cx="1670" cy="865" rx="5" ry="9" fill="#F59E0B" transform="rotate(-20 1670 865)"/>
+    <ellipse cx="1680" cy="888" rx="4.5" ry="8" fill="#FBBF24" transform="rotate(15 1680 888)"/>
+  </g>
+
+  <!-- ==========================================================
+       4. PARTÍCULAS DORADAS DE POLEN Y NÉCTAR FLOTANTE
+       ========================================================== -->
+  <g fill="#F59E0B">
+    <circle cx="280" cy="320" r="3.5" class="pollen-particle pollen-delayed-1" opacity="0.6"/>
+    <circle cx="340" cy="240" r="2.2" class="pollen-particle pollen-delayed-2" opacity="0.5"/>
+    <circle cx="210" cy="410" r="4.2" class="pollen-particle" opacity="0.7" fill="#FBBF24"/>
+    <circle cx="490" cy="180" r="2.8" class="pollen-particle pollen-delayed-3" opacity="0.6"/>
+
+    <circle cx="1620" cy="310" r="3.2" class="pollen-particle pollen-delayed-2" opacity="0.6"/>
+    <circle cx="1710" cy="220" r="4.5" class="pollen-particle pollen-delayed-1" opacity="0.75" fill="#FBBF24"/>
+    <circle cx="1550" cy="420" r="2.5" class="pollen-particle" opacity="0.5"/>
+    <circle cx="1810" cy="360" r="3.8" class="pollen-particle pollen-delayed-3" opacity="0.65"/>
+
+    <circle cx="180" cy="820" r="3.5" class="pollen-particle" opacity="0.7" fill="#FBBF24"/>
+    <circle cx="260" cy="780" r="4" class="pollen-particle pollen-delayed-1" opacity="0.65"/>
+    <circle cx="390" cy="840" r="2.8" class="pollen-particle pollen-delayed-2" opacity="0.55"/>
+    <circle cx="1650" cy="810" r="4.2" class="pollen-particle pollen-delayed-3" opacity="0.7" fill="#FBBF24"/>
+    <circle cx="1760" cy="770" r="3" class="pollen-particle" opacity="0.6"/>
+  </g>
+
+  <!-- ==========================================================
+       5. ENJAMBRE DE ABEJAS VOLADORAS REALISTAS
+       ========================================================== -->
+  <g class="bee-track-1">
+    <use href="#realistic-bee"/>
+  </g>
+
+  <g class="bee-track-2">
+    <use href="#realistic-bee"/>
+  </g>
+
+  <g class="bee-track-3">
+    <use href="#realistic-bee"/>
+  </g>
+
+  <g class="bee-track-4">
+    <use href="#realistic-bee"/>
+  </g>
+
+  <!-- Resplandor central suave radial que enmarca la tarjeta de Cognito -->
+  <rect x="560" y="240" width="800" height="600" rx="40" fill="url(#card-center-glow)"/>
+</svg>

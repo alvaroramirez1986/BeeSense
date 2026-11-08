@@ -1,0 +1,58 @@
+# ==============================================================================
+# BeeSense IoT - .gitignore
+# Exclusión estricta de credenciales, certificados, secretos y archivos temporales
+# ==============================================================================
+
+# Variables de entorno y secretos de hardware / backend
+.env
+.env.*
+!.env.example
+ESP32/secrets.h
+!ESP32/secrets.example.h
+
+# Configuración local de producción (usar config.example.js como plantilla)
+config.js
+!config.example.js
+
+# Certificados y llaves privadas
+*.pem
+*.crt
+*.key
+*.pfx
+*.p12
+*.cer
+token.json
+*token*.json
+
+# Archivos de caché y entornos Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Archivos de configuración de IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales de sistemas operativos
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Logs y volcados
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

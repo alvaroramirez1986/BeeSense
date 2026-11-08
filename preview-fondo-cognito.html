@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vista Previa - Fondo Animado Apícola para Amazon Cognito</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .background-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./assets/fondo-cognito-animado.svg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Simulación exacta del cuadro blanco de Amazon Cognito */
+    .cognito-simulated-box {
+      width: 90%;
+      max-width: 440px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 20px 45px -10px rgba(69, 42, 6, 0.25), 0 0 0 1px rgba(245, 158, 11, 0.15);
+      padding: 36px 32px;
+      text-align: left;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo-container img {
+      width: 150px;
+      height: auto;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #122B52;
+      margin-bottom: 6px;
+    }
+    p {
+      font-size: 14px;
+      color: #64748B;
+      margin-bottom: 24px;
+    }
+    label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1E293B;
+      display: block;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #122B52;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(18, 43, 82, 0.2);
+    }
+    .badge-info {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(18, 43, 82, 0.85);
+      backdrop-filter: blur(8px);
+      color: #FDE68A;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      z-index: 50;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="badge-info">
+    ✨ Vista Previa: Fondo Animado Apícola para Amazon Cognito (BeeSense)
+  </div>
+
+  <div class="background-container">
+    <!-- Simulación del formulario de Cognito -->
+    <div class="cognito-simulated-box">
+      <div class="logo-container">
+        <img src="./assets/logo-login.png" alt="BeeSense Logo">
+      </div>
+      <h2>Iniciar sesión</h2>
+      <p>Inicia sesión en tu cuenta apícola BeeSense.</p>
+      
+      <label>Dirección de correo electrónico</label>
+      <input type="email" placeholder="usuario@apicola.cl" value="apicultor@beesense.com" readonly>
+      
+      <button type="button">Siguiente</button>
+    </div>
+  </div>
+</body>
+</html>
